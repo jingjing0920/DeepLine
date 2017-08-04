@@ -1,0 +1,553 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>邂逅·遇见波尔多</title>
+<meta name="keywords" content="波尔多">
+<meta name="description" content="在波尔多的“风土”里，寻找身心安顿之道">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="width">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<link rel="stylesheet" type="text/css" href="common/css/swiper.min.css"> 
+<style type="text/css">
+    * { margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-appearance: none; max-height: 100000px;}
+    *:before, *:after { box-sizing: border-box; max-height: 100000px; }
+    body, html { width: 100%; }
+    html { -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent;}
+    html {/* font-size: 100px; */ }
+    body{font-size: .3rem; line-height: 1.5;font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif; background-color: #fff; color: #3a383c;  margin:0 auto; }
+    img{ border: 0;vertical-align: middle;}
+    a { background-color: transparent; text-decoration: none; }
+    a:active, a:hover { outline: 0; text-decoration: none;}
+    ul,li{list-style: none;}
+    i,em{font-style: normal;}
+    button{border:0 none;outline: 0;}
+    .clearfix { *zoom:1;}
+    .clearfix:after { display: block; clear: both; height: 0; overflow: hidden; visibility: hidden; content: "."; }
+    .clear { clear: both; height: 0; font-size: 1px; line-height: 0px; }
+    /* common */
+    .dpl-ft-bar~.dpl-container { padding-bottom: 44px }
+    .dpl-ft-bar { position: fixed; z-index: 99; right: 0; left: 0; bottom: 0; height: 44px; width: 100%; border-bottom: 0; background-color: #fff; -webkit-box-shadow: 0 0 1px rgba(0,0,0,.2); box-shadow: 0 0 1px rgba(0,0,0,.2); }
+    .dpl-ft-btn{border:0 none;}
+    .dpl-ft-cell2{width: 100%; display: table;}
+    .dpl-ft-cell2 a { display: table-cell;  height: 44px; width: 50%; text-align: center; vertical-align: middle;}
+    .dpl-btn-submit{ display: block; height: 44px; line-height: 44px; background:#57D07F; color: #FFF;  text-align: center; font-size: 15px;}
+    .dpl-ft-cell2 .btn-share { width: 30%; display: table-cell; vertical-align: middle; min-width: 44px; max-width: 60px; height: 44px; text-align: center; border-right: 1px solid #ededed; font-size: 14px; color: #333;}
+    .dpl-ft-cell2 .dpl-btn-submit{ width: 70%; }
+    .btn-share .iconshare { display: inline-block; width: 20px; height: 20px; vertical-align: middle; position: relative;  top: -1px; margin-right: 5px; background: url(bordeaux/img/icon-share.png) center center no-repeat; background-size: 20px 20px;}
+    .dpl-footer{ background:rgba(0,0,0,.5); text-align: center; font-size: .26rem; color: #b6b6b6; padding-top: .6rem; padding-bottom: .7rem; }
+    .dpl-footer .dpl-footer-label{ display: inline-block; width: 1.74rem; height: .43rem; margin-top: .4rem; background: url(bordeaux/img/footer-label.png) no-repeat; background-size: contain; }
+    /* actionsheet */
+    .ft-actionsheet { position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 9999; opacity: 0; pointer-events: none; display: -webkit-box; -webkit-box-orient: horizontal; -webkit-box-pack: center; -webkit-box-align: end; background: rgba(0, 0, 0, 0.5); }
+    .ft-actionsheet.show { pointer-events: inherit; opacity: 1; }
+    .ft-actionsheet.show .ft-actionsheet-cnt { -webkit-transform: translateY(0); -webkit-transition-delay: 0.3s; }
+    .ft-actionsheet-cnt { font-size: 18px; position: fixed; bottom: 0; padding: 0 8px; width: 100%; box-sizing: border-box; text-align: center; -webkit-transform: translateY(100%); -webkit-transition-property: all; -webkit-transition-timing-function: ease-out; -webkit-transition-duration: 0.3s; }
+    .ft-actionsheet button, .ft-actionsheet h4 { background: rgba(255, 255, 255, 0.95); display: block; width: 100%; color: #0079ff; box-sizing: border-box; }
+    .ft-actionsheet button { line-height: 44px; height: 44px; font-size: .32rem; }
+    .ft-actionsheet h4 { line-height: 24px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 3px; border-top-right-radius: 3px; }
+    .ft-actionsheet button:not(:last-child) { border-top: 1px #ccc solid; }
+    .ft-actionsheet button:last-child { margin: 8px 0; border-radius: 3px; }
+    .ft-actionsheet button:nth-last-child(2) { border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; }
+    .ft-actionsheet button:active { opacity: 0.95; }
+    .ft-actionsheet h4 { font-size: 14px; color: #8a8a8a; }
+    .ft-actionsheet .ft-actionsheet-del { color: #fd472b; }
+    @media screen and (-webkit-min-device-pixel-ratio: 2) {
+        .ft-actionsheet button:not(:last-child) { border: 0; background-position: left top; background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.5, transparent), color-stop(0.5, #ccc), to(#ccc)); background-repeat: repeat-x; -webkit-background-size: 100% 1px; }
+    }
+    /* content */
+    .dpl-body{ width: 100%; background: url(bordeaux/img/bg.jpg) no-repeat; background-size: 100% auto; background-attachment: fixed;}
+    .dpl-body:before {  content: ' ';  position: fixed;  z-index: -1;  top: 0;  right: 0;  bottom: 0;  left: 0;  background: url(bordeaux/img/bg.jpg) center 0 no-repeat;  background-size: cover;}
+    .dpl-wrapper{ position: relative; }
+    .dpl-container{ width: 100%; }
+    .dpl-container img{ width:100%; height: auto; vertical-align: middle; }
+    .dpl-banner {}
+    .dpl-banner .dpl-logo{text-align: right; padding-right: .3rem; padding-top: .3rem;}
+    .dpl-banner .dpl-logo .logo{ display: inline-block; width: 1.2rem; height: 1.29rem; background: url(bordeaux/img/logo.png); background-size: cover; }
+    .dpl-banner .dpl-topic{text-align: center; padding:0 .3rem;}
+    .dpl-banner .dpl-topic img{ width: 70%; }
+    .dpl-btm{ padding-top: 3.5rem; }
+    .dpl-title{text-align: center; padding:.6rem 0;}
+    .dpl-title img{ width: 100%; }
+    .dpl-concept{ position: relative; background-color: #fff; margin-bottom: .2rem; padding-bottom: .2rem; }
+    .dpl-concept .concept-box{ padding:0 .4rem; padding-bottom: 1.6rem; position: relative; background: url(bordeaux/img/line-02.jpg) bottom center no-repeat; background-size: contain; }
+    .dpl-concept .concept-box:before{content: ''; display: block; width: .52rem; height: .51rem; position: absolute; left: .4rem; top: -.35rem; background: url(bordeaux/img/icon-01.png); background-size: cover;}
+    .dpl-concept .concept-box .concept-text{ float: left; width: 60%; padding-top: .35rem; padding-right: .3rem; font-size: .3rem; color: #794c33; text-indent: .6rem; }
+    .dpl-concept .concept-box .concept-text p{ margin-bottom: .15rem; }
+    .dpl-concept .concept-box .concept-text{}
+    .dpl-concept .concept-box .concept-img{ float: right; width: 40%; }
+    .dpl-highlights{background-color: #fff; padding-bottom: .1rem;}
+    .dpl-hl-box{ padding:0 .4rem; }
+    .dpl-hl-item{ margin-bottom: .5rem; }
+    .dpl-hl-item .hl-title{ text-align: center; }
+    .dpl-hl-item .hl-title .hl-tit-1{ font-size: .4rem; position: relative; font-weight: bold;}
+    .dpl-hl-item .hl-title .hl-tit-1:before{content: ''; display: inline-block; width: .4rem; height: 10px; border-top: 2px solid #3a383c; margin-right: .2rem;}
+    .dpl-hl-item .hl-title .hl-tit-1:after{content: ''; display: inline-block; width: .4rem; height: 10px; border-top: 2px solid #3a383c; margin-left: .2rem;}
+    .dpl-hl-item .hl-title .hl-tit-2{ font-size: .32rem;font-weight: bold; }
+    .dpl-hl-item .hl-img{padding:.4rem 0 .3rem 0;}
+    .dpl-hl-item .hl-txt{ text-indent: .6rem; }
+    .dpl-hl-item .hl-txt strong{ font-size: .38rem; color: #794c33; }
+    .dpl-trip{ background-color:rgba(0,0,0,.6); }
+    .dpl-price-desc{ color: #794c33; position: relative; padding: .48rem 0; background-color: #fff; }
+    .dpl-price-box{padding: .4rem;}
+    .dpl-price-item{ padding:.15rem .1rem .1rem .45rem; }
+    .dpl-price-item .dpl-price-tit{ display: block; font-size: .28rem; font-weight: 600; padding-bottom:.1rem; position: relative; }
+    .dpl-price-item .dpl-price-tit .icon{ display: block; width: .4rem; height: .4rem; position: absolute; left: -.46rem; top:-.04rem; }
+    .dpl-price-item .dpl-price-txt{border-bottom:1px solid #794c33; padding-bottom:.2rem;}
+    .intro-case-container{ width: 100%; max-height: 100%; padding-bottom: 50px;}
+    .intro-case-container .swiper-pagination-bullet{background: rgba(255,255,255,.5); }
+    .intro-case-container .swiper-pagination-bullet-active{background:rgba(224,151,45,.8);}
+    .intro-case-container.swiper-container-horizontal>.swiper-pagination .swiper-pagination-bullet{margin:0 3px;}
+    .case-slide{ width: 80%; background: #f5f5f7;  -webkit-border-radius: 6px; border-radius: 6px; overflow: hidden; }
+    .case-slide.swiper-slide-active{opacity: 1;}
+    .slide-case{height: 7.6rem;}
+    .case-img{ position: relative; }
+    .case-img img{ width: 100%; height: auto; }
+    .case-img .case-day{ width: 1rem; height: .4rem; line-height: .4rem; position: absolute; left:.15rem; top: 0; background-color: #ff9d14; color: #fff; font-size: .24rem; text-align: center; }
+    .case-img .case-city{ position: absolute; left: .2rem; bottom: .15rem; width: 100%; text-align: center; color: #fff; }
+    .case-title{ font-size: 0.16rem; line-height: 0.4rem; height: 0.4rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #333; padding:5px 15px;font-family: PingFangSC-Regular;}
+    .case-line{padding:.25rem 0; text-align: center;}
+    .case-line-box{ overflow: hidden; text-align: center; display: inline-block; }
+    .case-line-box .line-item{ float: left; display: inline-block; font-size: .24rem; padding:0 .2rem; position: relative; }
+    .case-line-box .line-item:after{ content: ''; display: inline-block; width: .25rem; height: 10px; position: absolute; right: 0; top: .15rem; border-top: 1px dotted #3e3c40; }
+    .case-line-box .line-item:before{ content: ''; display: inline-block; width: .25rem; height: 10px; position: absolute; left: 0; top: .15rem; border-top: 1px dotted #3e3c40; }
+    .case-line-box .line-item .line-dot{ display: block; }
+    .case-line-box .line-item .line-dot .dot{ display: inline-block; width: .2rem; height: .2rem; border-radius: 50%; border:2px solid #3e3c40; background-color: #fff; }
+    .case-desc{  padding:0 .3rem .3rem .3rem; }
+    .case-desc p{ font-size: .24rem; }
+</style>
+<script type="text/javascript">
+    (function() {
+        function refreshRem() {
+            var width = docEl.getBoundingClientRect().width;
+            rem = width / (BASE_WIDTH / ROOT_FONT_SIZE);
+            docEl.style.fontSize = rem + "px";
+        }
+        var tid = null, docEl = document.documentElement, BASE_WIDTH = 750, ROOT_FONT_SIZE = 100;
+        refreshRem();
+         window.addEventListener("resize", function() {
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 300);
+        }, false);
+    })();
+</script>
+</head>
+<body class="dpl-body">
+    <div class="dpl-wrapper">
+        <!-- 底部固定浮动 -->
+        <div class="dpl-ft-bar dpl-ft-btn dpl-ft-cell2">
+            <a href="" class="btn-share"><i class="iconshare"></i>分享</a>
+            <a href="" class="dpl-btn-submit">咨询旅行顾问</a>
+        </div>
+        <div class="dpl-container">
+            <!-- //头部Banner -->
+            <div class="dpl-banner">
+                <p class="dpl-logo"><span class="logo"></span></p>
+                <p class="dpl-topic"><img src="bordeaux/img/topic.png"></p>
+                <div class="dpl-btm">
+                    <img src="bordeaux/img/line.png">
+                </div>
+            </div>
+            <!-- //设计理念 -->
+            <div class="dpl-concept">
+                <div class="dpl-title">
+                    <img src="bordeaux/img/nav-01.png">
+                </div>
+                <div class="concept-box clearfix">
+                    <div class="concept-text">
+                        <p>雨果说：“这是一所奇特的城市，原始的，也许还是独特的，把凡尔赛和安特卫普两个城市融合在一起，您就得到了波尔多。”</p>
+                        <p>这一次，我们将邀请您一起深度体味的波尔多，是现实世界里历史传承的深韵之美，是一种重新理解的自由与意志，也是在法式的精神里重新回归自我、回归生活。</p>
+                    </div>
+                    <div class="concept-img">
+                        <img src="bordeaux/img/map.jpg">
+                    </div>
+                </div>
+            </div>
+            <!-- //行程亮点 -->
+            <div class="dpl-highlights">
+                <div class="dpl-title">
+                    <img src="bordeaux/img/nav-02.png">
+                </div>
+                <div class="dpl-hl-box">
+                    <div class="dpl-hl-item">
+                        <div class="hl-title">
+                            <span class="hl-tit-1">01</span>
+                            <p class="hl-tit-2">【泰兰酒庄】</p>
+                        </div>
+                        <div class="hl-img">
+                            <img src="bordeaux/img/hl-pic-01.jpg">
+                        </div>
+                        <p class="hl-txt"><strong>泰兰酒庄</strong>是英国女皇访问法国时，曾拜访过的私人酒庄。私人酒庄是不开放城堡参观的，因为城堡是主人居住和日常生活的地方，对于主人来说，是极其隐私的，除非是很好的朋友。我们将有一次特别的机会参观这座城堡的内部，作为几代人生活并传承酿酒的中心，它保留着一个家族的历史足迹，进入一个真实而特别的生活，是旅行最难得的体验。</p>
+                    </div>
+                    <div class="dpl-hl-item">
+                        <div class="hl-title">
+                            <span class="hl-tit-1">02</span>
+                            <p class="hl-tit-2">【圣埃米隆】</p>
+                        </div>
+                        <div class="hl-img">
+                            <img src="bordeaux/img/hl-pic-02.jpg">
+                        </div>
+                        <p class="hl-txt"><strong>圣埃米隆</strong>是世界上唯一一个以葡萄种植园为文化特色的历史景观和自然遗址，在这里我们有更棒的体验是，您可以感受成为酒窖主管或者葡萄种植师的乐趣，和酒庄工作人员团队协作参与特级酒的制作过程，在葡萄园团队工作，学习如何制作Grand crus葡萄酒。</p>
+                    </div>
+                    <div class="dpl-hl-item">
+                        <div class="hl-title">
+                            <span class="hl-tit-1">03</span>
+                            <p class="hl-tit-2">【古书装帧工作室】</p>
+                        </div>
+                        <div class="hl-img">
+                            <img src="bordeaux/img/hl-pic-03.jpg">
+                        </div>
+                        <p class="hl-txt"><strong>古书装帧修复工作室</strong>这是一门古老的工艺，伴随着书籍的出现而产生，也许也会随着书籍的消失而消逝，就像穿越了时空门回到了上个世纪，挂满墙壁的皮革，随处可见的铁具，总是唤起对于过去的回忆。一个身影穿梭在工作台间，摆弄着各种古老的机器。这门工艺并不多见，以后恐怕会更难看见，匠心独特，却是相同的美与传承。</p>
+                    </div>
+                    <div class="dpl-hl-item">
+                        <div class="hl-title">
+                            <span class="hl-tit-1">04</span>
+                            <p class="hl-tit-2">【PHILIPPE ETCHEBEST 特色餐厅】</p>
+                        </div>
+                        <div class="hl-img">
+                            <img src="bordeaux/img/hl-pic-04.jpg">
+                        </div>
+                        <p class="hl-txt"><strong>特色餐厅</strong>，拳击手主厨、法国最佳工艺奖MOF获得者PHILIPPE ETCHEBEST餐厅用餐。出身法国波尔多的PHILIPPE ETCHEBEST，不仅拥有绝佳的运动细胞，还勇夺法国MOF工艺奖最佳主厨的荣誉，法国热门电视节目【TOP CHEF】邀请他担任起死回生餐厅主厨，PHILIPPE在法国非常受欢迎，家喻户晓。我们特意拜访他在波尔多的餐厅，体验法式美食。</p>
+                    </div>
+                    <div class="dpl-hl-item">
+                        <div class="hl-title">
+                            <span class="hl-tit-1">05</span>
+                            <p class="hl-tit-2">【悬崖小镇】</p>
+                        </div>
+                        <div class="hl-img">
+                            <img src="bordeaux/img/hl-pic-05.jpg">
+                        </div>
+                        <p class="hl-txt"><strong>悬崖小镇</strong>，乘坐小火车游览整个石甲村。从1982年开始成为法国最美小镇之一。乘坐仿造古游船Gabars,观赏河岸风光，开始进入法国深度小镇游。</p>
+                    </div>
+                    <div class="dpl-hl-item">
+                        <div class="hl-title">
+                            <span class="hl-tit-1">06</span>
+                            <p class="hl-tit-2">【“法兰西骄傲”Manoir Eyrignac花园】</p>
+                        </div>
+                        <div class="hl-img">
+                            <img src="bordeaux/img/hl-pic-06.jpg">
+                        </div>
+                        <p class="hl-txt"><strong>Manoir Eyrignac</strong> 法国最美花园，被称为“法兰西骄傲”。花园的主人Capucine et Patrick Sermadiras夫妇绝对是贵族中的贵族，对花园一草一木、一花一叶近乎完美的艺术追求，甚至他在用餐时候，对于器皿、花式以及食物装饰的要求上都可以窥探法国优雅阶层对美、对优质生活的不同见解。</p>
+                    </div>
+                    <div class="dpl-hl-item">
+                        <div class="hl-title">
+                            <span class="hl-tit-1">07</span>
+                            <p class="hl-tit-2">【探索中世纪城堡】</p>
+                        </div>
+                        <div class="hl-img">
+                            <img src="bordeaux/img/hl-pic-07.jpg">
+                        </div>
+                        <p class="hl-txt"><strong>拉布列德城堡</strong>(Château de la Brède)孟德斯鸠的出生地，至今仍完好地矗立于波尔多南郊，自1951年起被法国列为国家历史遗产。探索隐居山中的<strong>蒙田古堡</strong>(Château de Montaigne)，诗人蒙田Montaigne当年居住中世纪城堡的塔楼和写满屋顶的诗句。</p>
+                    </div>
+                </div>
+            </div>
+            <!-- //参考行程 -->
+            <div class="dpl-trip">
+                <div class="dpl-title">
+                    <img src="bordeaux/img/nav-03.png">
+                </div>
+                <div class="dpl-trip-detail">
+                    <div class="swiper-container intro-case-container">
+                    <div class="swiper-wrapper intro-case-wrapper">
+                        <div class="swiper-slide case-slide">
+                            <div class="slide-case">
+                                <div class="case-img">
+                                    <span class="case-day">DAY1</span>
+                                    <span class="case-city"><i></i>波尔多</span>
+                                    <img src="bordeaux/img/trip-pic-01.jpg" alt="">
+                                </div>
+                                <div class="case-line">
+                                    <div class="case-line-box">
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">国内</span>
+                                        </div>
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">巴黎</span>
+                                        </div>
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">波尔多</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="case-desc">
+                                    <p>•    在机上好好休息，期待即将到来的精彩旅程<br>•    机场转机前往波尔多</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide case-slide">
+                            <div class="slide-case">
+                                <div class="case-img">
+                                    <span class="case-day">DAY2</span>
+                                    <span class="case-city"><i></i>波尔多</span>
+                                    <img src="bordeaux/img/trip-pic-02.jpg" alt="">
+                                </div>
+                                <div class="case-line">
+                                    <div class="case-line-box">
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">波尔多</span>
+                                        </div>
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">梅多克</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="case-desc">
+                                    <p>•    前往梅多克最美的私人酒庄 –泰兰酒庄 <br>
+•   特别企划 - 酒庄花园早餐<br>
+•   参观泰兰酒庄，主人居住的城堡和品酒<br>
+•   午餐 –  明星厨师导师 Philippe Etchebest 的餐厅用餐
+</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide case-slide">
+                            <div class="slide-case">
+                                <div class="case-img">
+                                    <span class="case-day">DAY3</span>
+                                    <span class="case-city"><i></i>波尔多</span>
+                                    <img src="bordeaux/img/trip-pic-03.jpg" alt="">
+                                </div>
+                                <div class="case-line">
+                                    <div class="case-line-box">
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">波尔多</span>
+                                        </div>
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">阿卡雄</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="case-desc">
+                                    <p>•    逛波尔多当地食品市场 « Marché capucins »，在集市上直接试吃新鲜的生蚝 <br>
+•   著名的阿卡雄大沙丘<br></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide case-slide">
+                            <div class="slide-case">
+                                <div class="case-img">
+                                    <span class="case-day">DAY4</span>
+                                    <span class="case-city"><i></i>波尔多</span>
+                                    <img src="bordeaux/img/trip-pic-04.jpg" alt="">
+                                </div>
+                                <div class="case-line">
+                                    <div class="case-line-box">
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">波尔多</span>
+                                        </div>
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">圣埃米隆</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="case-desc">
+                                    <p>•   成为葡萄工艺者 (三小时)，体验葡萄酒酿造师，在葡萄园团队工作，学习如何制作Grand crus葡萄酒</p>
+                                    <p>•   探索中世纪城堡，隐居山中的Chateau de Montaigne当年居住的塔楼和写满屋顶的诗句
+</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide case-slide">
+                            <div class="slide-case">
+                                <div class="case-img">
+                                    <span class="case-day">DAY5</span>
+                                    <span class="case-city"><i></i>波尔多</span>
+                                    <img src="bordeaux/img/trip-pic-05.jpg" alt="">
+                                </div>
+                                <div class="case-line">
+                                    <div class="case-line-box">
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">波尔多</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="case-desc">
+                                    <p>•   参观波尔多市区的手工作坊，稀有工作室——古书装帧修复工作室</p>
+                                    <p>•   孟德斯鸠城堡</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide case-slide">
+                            <div class="slide-case">
+                                <div class="case-img">
+                                    <span class="case-day">DAY6</span>
+                                    <span class="case-city"><i></i>波尔多</span>
+                                    <img src="bordeaux/img/trip-pic-06.jpg" alt="">
+                                </div>
+                                <div class="case-line">
+                                    <div class="case-line-box">
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">Mouleydier</span>
+                                        </div>
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">Domme</span>
+                                        </div>
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">La Roque<br>Gageac</span>
+                                        </div>
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">Sarlat</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="case-desc">
+                                    <p>•   前往多尔多涅河谷，乘坐小火车游览整个石甲村，这是一个美丽的悬崖小村，以令人屏息的壮阔美景从1982年开始成为法国最美小镇之一。
+</p>
+                                    <p>•   然后乘坐仿造古游船Gabars,观赏河岸风光，之后前往萨拉小镇
+</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide case-slide">
+                            <div class="slide-case">
+                                <div class="case-img">
+                                    <span class="case-day">DAY7</span>
+                                    <span class="case-city"><i></i>波尔多</span>
+                                    <img src="bordeaux/img/trip-pic-07.jpg" alt="">
+                                </div>
+                                <div class="case-line">
+                                    <div class="case-line-box">
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">Sarlat</span>
+                                        </div>
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">Garden Manoir <br>Eyrignac</span>
+                                        </div>
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">Rocamadour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="case-desc">
+                                    <p>•   参观 Manoir Eyrignac花园，它的不同寻常创意和植物建筑，法国最美花园之一，被称为“法兰西骄傲”</p>
+                                    <p>•   接着前往圣城罗马度卡，是法国除圣米歇尔山之外，被参观最多的景点</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide case-slide">
+                            <div class="slide-case">
+                                <div class="case-img">
+                                    <span class="case-day">DAY8</span>
+                                    <span class="case-city"><i></i>波尔多</span>
+                                    <img src="bordeaux/img/trip-pic-08.jpg" alt="">
+                                </div>
+                                <div class="case-line">
+                                    <div class="case-line-box">
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">波尔多</span>
+                                        </div>
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">巴黎</span>
+                                        </div>
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">国内</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="case-desc">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide case-slide">
+                            <div class="slide-case">
+                                <div class="case-img">
+                                    <span class="case-day">DAY9</span>
+                                    <span class="case-city"><i></i>波尔多</span>
+                                    <img src="bordeaux/img/trip-pic-09.jpg" alt="">
+                                </div>
+                                <div class="case-line">
+                                    <div class="case-line-box">
+                                        <div class="line-item">
+                                            <span class="line-dot"><i class="dot"></i></span>
+                                            <span class="line-name">抵达国内</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="case-desc">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- 分页器 -->
+                    <div class="swiper-pagination"></div>
+                </div>
+                </div>
+            </div>
+            <!-- //价格说明 -->
+            <div class="dpl-price-desc">
+                <div class="dpl-title">
+                    <img src="bordeaux/img/nav-04.png" alt="">
+                </div>
+                <div class="dpl-price-box">
+                    <div class="dpl-price-item">
+                        <span class="dpl-price-tit">参考报价<i class="icon"><img src="bordeaux/img/icon-note.png" alt=""></i></span>
+                        <p>6人定制参考价格：<strong style="font-size: .32rem;">4.25</strong>万/人</p>
+                        <p>12人定制参考价格：<strong style="font-size: .32rem;">3.75</strong>万/人</p>
+                        <p class="dpl-price-txt">最终价格以实际出行人数为准</p>
+                    </div>
+                    <div class="dpl-price-item">
+                        <span class="dpl-price-tit">最佳出行时间<i class="icon"><img src="bordeaux/img/icon-clock.png" alt=""></i></span>
+                        <p class="dpl-price-txt">每年的八、九、十月份</p>
+                    </div>
+                    <div class="dpl-price-item">
+                        <span class="dpl-price-tit">报价包含<i class="icon"><img src="bordeaux/img/icon-contain.png" alt=""></i></span>
+                        <p class="dpl-price-txt">精品小众酒店、法式特色餐、当地优秀司机导游、活动项目、保险等</p>
+                    </div>
+                    <div class="dpl-price-item">
+                        <span class="dpl-price-tit">报价不含<i class="icon"><img src="bordeaux/img/icon-contain-no.png" alt=""></i></span>
+                        <p class="dpl-price-txt">国际机票、签证费用、私人消费和其它未提及的费用</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dpl-footer">
+                <p>以上产品最终解释权归6人游所有</p>
+                <span class="dpl-footer-label"></span>
+            </div>
+        </div>
+        <!-- 分享弹层 -->
+        <div class="ft-actionsheet show" style="display: none;">
+            <div class="ft-actionsheet-cnt">
+                <h4>分享到</h4>
+                <button>微信好友</button>
+                <button>微信朋友圈</button>
+                <button>取消</button>
+            </div>
+        </div>
+    </div>
+    <script src="common/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            paginationClickable: true,
+            spaceBetween: 15
+        });
+    </script>
+</body>
+</html> 
